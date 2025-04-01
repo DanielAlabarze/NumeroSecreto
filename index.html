@@ -25,16 +25,37 @@
   <body class="body">
     <div class="containerTitulo">
       <h1>Adiviná el Número Secreto</h1>
-      <h1>?</h1>
-      <h2 class="intentos"></h>
+
+      <h2 class="intentos"></h2>
     </div>
+
     <div class="divEntrada">
-      <input type="number" class="entrada" value="0" min="1" max="10" />
+      <div class="contadoresEntrada">
+        <div class="containerGanadosPerdidos">
+          <p>Juegos Ganados</p>
+          <div class="containerContador">
+            <div id="juegosGanados">0</div>
+          </div>
+        </div>
+
+        <input type="number" class="entrada" value="0" min="1" max="10" />
+
+        <div class="containerGanadosPerdidos">
+          <p>Juegos Perdidos</p>
+          <div class="containerContador">
+            <div id="juegosPerdidos">0</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button id="botonReinicio">Reiniciar Contadores</button>
+      </div>
     </div>
+
     <div class="divSalida">
-       <h1 class="ganaste"></h1>
-       <h1 class="salidaGanadorPerdedor"></h1>
-       <h2 class="salida"></h2>
+      <h1 class="ganaste"></h1>
+      <h1 class="salidaGanadorPerdedor"></h1>
+      <h2 class="salida"></h2>
     </div>
 
     <script src="numeroSecreto.js"></script>
