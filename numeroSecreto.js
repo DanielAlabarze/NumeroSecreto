@@ -5,7 +5,7 @@ const Salida = document.querySelector(".salida");
 const GanastePerdiste = document.querySelector(".ganaste");
 const IntentosRestantes = document.querySelector(".intentos");
 
-IntentosRestantes.innerHTML = "Tenes 10 intentos";
+IntentosRestantes.innerHTML = "Tienes 10 intentos";
 
 let intentos = 0; // Inicializo el contador de intentos
 
@@ -28,15 +28,20 @@ function adivinarNumeroSecreto() {
   if (numeroIngresado == numeroSecreto) {
     jsConfetti.addConfetti();
 
-    GanastePerdiste.innerHTML = "¡ Ganaste 🎉!";
+    GanastePerdiste.innerHTML = "¡Ganaste 🎉!";
 
-    IntentosRestantes.innerHTML = `Te sobraron ${10 - intentos} intentos.`;
+    IntentosRestantes.innerHTML =
+      10 - intentos === 1
+        ? `Te sobro ${10 - intentos} intento.`
+        : `Te sobraron ${10 - intentos} intentos.`;
 
-    Salida.innerHTML = `¡Felicidades! ingresaste ${Entrada}, Adivinaste el número secreto en ${intentos} intentos.`;
+    Salida.innerHTML = `¡Felicidades! ingresaste ${Entrada}, Adivinaste el número secreto en ${intentos} ${
+      intentos === 1 ? "intento" : "intentos"
+    }.`;
 
     setTimeout(() => {
       jsConfetti.addConfetti();
-    }, 1000);
+    }, 500);
 
     intentos = 0; // Reinicio el contador de intentos para un nuevo juego
   } else {
@@ -44,13 +49,16 @@ function adivinarNumeroSecreto() {
       Salida.innerHTML = `Lo siento, ingresaste ${Entrada} y el número secreto era ${numeroSecreto}. Intenta nuevamente.`;
       GanastePerdiste.innerHTML = "";
 
-      IntentosRestantes.innerHTML = `Te quedan ${10 - intentos} intentos.`;
+      IntentosRestantes.innerHTML =
+        10 - intentos === 1
+          ? `Te queda ${10 - intentos} intento.`
+          : `Te quedan ${10 - intentos} intentos.`;
     } else {
       Salida.innerHTML = `Lo siento, ingresaste ${Entrada} y el número secreto era ${numeroSecreto}.`;
 
-      IntentosRestantes.innerHTML = `¡ Agotaste los 10 intentos !`;
+      IntentosRestantes.innerHTML = `¡Agotaste los 10 intentos!`;
 
-      GanastePerdiste.innerHTML = "¡ Perdiste 😪!";
+      GanastePerdiste.innerHTML = "¡Perdiste 😪!";
       intentos = 0; // Reinicio el contador de intentos para un nuevo juego
     }
   }
