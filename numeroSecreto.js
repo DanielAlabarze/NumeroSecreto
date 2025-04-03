@@ -11,12 +11,10 @@ const juegosGanadosElement = document.getElementById("juegosGanados");
 const juegosPerdidosElement = document.getElementById("juegosPerdidos");
 const botonReinicio = document.getElementById("botonReinicio");
 
-
 inputEntrada.textContent = 0;
 
-
 // Establezco el mensaje inicial de intentos restantes
-IntentosRestantes.innerHTML = "Tienes 10 intentos";
+IntentosRestantes.innerHTML = "Tenes 10 intentos";
 
 // Inicializo las variables de contador
 let intentos = 0;
@@ -99,8 +97,6 @@ function adivinarNumeroSecreto() {
     GanastePerdiste.innerHTML = "¡Ganaste 🎉!";
     salidaGanadorPerdedor.innerHTML = fraseAleatoriaGanador;
 
-
-
     // Muestro información sobre los intentos restantes
     IntentosRestantes.innerHTML =
       10 - intentos === 1
@@ -114,7 +110,7 @@ function adivinarNumeroSecreto() {
     // Efecto de confeti adicional después de un breve retraso
     setTimeout(() => {
       jsConfetti.addConfetti();
-    }, 500);
+    }, 300);
 
     // Reinicio el contador de intentos y limpia el campo de entrada
     intentos = 0;
@@ -141,8 +137,6 @@ function adivinarNumeroSecreto() {
       IntentosRestantes.innerHTML = `¡Agotaste los 10 intentos!`;
       GanastePerdiste.innerHTML = "¡Perdiste 😪!";
 
-     
-
       salidaGanadorPerdedor.innerHTML = fraseAleatoriaPerdedor;
 
       // Reinicio el contador de intentos, limpia el campo de entrada,
@@ -160,6 +154,12 @@ function reiniciarContadores() {
   juegosGanados = 0;
   juegosPerdidos = 0;
   inputEntrada.value = 0;
+  IntentosRestantes.innerHTML = "Tenes 10 intentos";
+  Salida.innerHTML =
+    "Por favor, ingresa un número entre 1 y 10, luego presiona Enter";
+  salidaGanadorPerdedor.innerHTML = "";
+  GanastePerdiste.innerHTML = "";
+
   actualizarContadores();
 }
 
