@@ -101,9 +101,9 @@ function adivinarNumeroSecreto() {
         ? `Te sobro ${10 - intentos} intento.`
         : `Te sobraron ${10 - intentos} intentos.`;
 
-    Salida.innerHTML = `¡Felicidades! ingresaste ${Entrada}, Adivinaste el número secreto en ${intentos} ${
+    Salida.innerHTML = `Ingresaste ${Entrada}, Adivinaste el número secreto en ${intentos} ${
       intentos === 1 ? "intento" : "intentos"
-    }.`;
+    }`;
 
     // Efecto de confeti adicional después de un breve retraso
     setTimeout(() => {
@@ -120,7 +120,7 @@ function adivinarNumeroSecreto() {
     // Si el usuario no adivina el número
     if (intentos < 10) {
       // Muestro mensaje de intento fallido
-      Salida.innerHTML = `Lo siento, ingresaste ${Entrada} y el número secreto era ${numeroSecreto}. Intenta nuevamente.`;
+      Salida.innerHTML = `Ingresaste ${Entrada} y el número secreto era ${numeroSecreto}. Intenta nuevamente`;
       GanastePerdiste.innerHTML = "";
       salidaGanadorPerdedor.innerHTML = "";
 
@@ -131,7 +131,7 @@ function adivinarNumeroSecreto() {
           : `Te quedan ${10 - intentos} intentos`;
     } else {
       // Si el usuario agota los intentos
-      Salida.innerHTML = `Lo siento, ingresaste ${Entrada} y el número secreto era ${numeroSecreto}.`;
+      Salida.innerHTML = `Lo siento, ingresaste ${Entrada} y el número secreto era ${numeroSecreto}`;
       IntentosRestantes.innerHTML = `¡Agotaste los 10 intentos!`;
       GanastePerdiste.innerHTML = "¡Perdiste 😪!";
       salidaGanadorPerdedor.innerHTML = fraseAleatoriaPerdedor;
