@@ -11,6 +11,10 @@ const juegosGanadosElement = document.getElementById("juegosGanados");
 const juegosPerdidosElement = document.getElementById("juegosPerdidos");
 const botonReinicio = document.getElementById("botonReinicio");
 
+
+inputEntrada.textContent = 0;
+
+
 // Establezco el mensaje inicial de intentos restantes
 IntentosRestantes.innerHTML = "Tienes 10 intentos";
 
@@ -95,6 +99,8 @@ function adivinarNumeroSecreto() {
     GanastePerdiste.innerHTML = "¡Ganaste 🎉!";
     salidaGanadorPerdedor.innerHTML = fraseAleatoriaGanador;
 
+
+
     // Muestro información sobre los intentos restantes
     IntentosRestantes.innerHTML =
       10 - intentos === 1
@@ -134,6 +140,9 @@ function adivinarNumeroSecreto() {
       Salida.innerHTML = `Lo siento, ingresaste ${Entrada} y el número secreto era ${numeroSecreto}`;
       IntentosRestantes.innerHTML = `¡Agotaste los 10 intentos!`;
       GanastePerdiste.innerHTML = "¡Perdiste 😪!";
+
+     
+
       salidaGanadorPerdedor.innerHTML = fraseAleatoriaPerdedor;
 
       // Reinicio el contador de intentos, limpia el campo de entrada,
@@ -150,6 +159,7 @@ function adivinarNumeroSecreto() {
 function reiniciarContadores() {
   juegosGanados = 0;
   juegosPerdidos = 0;
+  inputEntrada.value = 0;
   actualizarContadores();
 }
 

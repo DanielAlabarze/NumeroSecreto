@@ -102,6 +102,10 @@ body {
   font-size: 2.5rem;
   color: rgb(13, 240, 13);
 }
+
+
+
+
 .salidaGanadorPerdedor {
   font-size: 2.5rem;
 }
@@ -183,14 +187,14 @@ body {
     margin-top: 1.5rem;
    
 
-    h2 {
-      font-size: 1.2rem;
-    }
+   
   }
 .titulo {
       font-size: 1.3rem;
     }
-
+ .intentos {
+      font-size: 1rem;
+    }
 
   .ganaste {
     font-size: 2rem;
